@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int size = 4;
+        int size = 3;
         String[][] markedPlaces = new String[size][size];
 
         String winner = "";
