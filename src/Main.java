@@ -18,8 +18,8 @@ public class Main {
         System.out.println("Player 'O' goes first and player 'X' goes second.");
 //        Start the game.
         while (winner.isEmpty()) {
-            System.out.println("Give me the position (numbers from 1 to " + size + "), where you want put your symbol (" +
-                    currentPlayer + ") -> example for first row and third column: 1;3");
+            System.out.println("Give me the position (numbers from 1 to " + size + "), where you want to put" +
+                    " your symbol (" + currentPlayer + ") -> example for first row and third column: 1;3");
 //            Check input.
             try {
                 String[] position = scanner.nextLine().replaceAll("\\s", "").split(";");
