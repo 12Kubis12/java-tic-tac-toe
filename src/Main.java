@@ -105,11 +105,11 @@ public class Main {
         for (int i = 0; i < markedPlaces.length; i++) {
             for (int j = 0; j < markedPlaces[i].length; j++) {
                 if (markedPlaces[i][j] != null) {
-                    // check horizontal direction
+//                    Check horizontal direction
                     if (!winner && j > 0 && j < markedPlaces[i].length - 1) {
                         winner = markedPlaces[i][j].equals(markedPlaces[i][j - 1]) &&
                                 markedPlaces[i][j].equals(markedPlaces[i][j + 1]);
-                        // check diagonal direction
+//                        Check diagonal direction
                         if (!winner && i > 0 && i < markedPlaces.length - 1) {
                             winner = (markedPlaces[i][j].equals(markedPlaces[i - 1][j - 1]) &&
                                     markedPlaces[i][j].equals(markedPlaces[i + 1][j + 1])) ||
@@ -117,7 +117,7 @@ public class Main {
                                             markedPlaces[i][j].equals(markedPlaces[i + 1][j - 1]));
                         }
                     }
-                    // check vertical direction
+//                    Check vertical direction
                     if (!winner && i > 0 && i < markedPlaces.length - 1) {
                         winner = markedPlaces[i][j].equals(markedPlaces[i - 1][j]) &&
                                 markedPlaces[i][j].equals(markedPlaces[i + 1][j]);
