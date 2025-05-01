@@ -15,19 +15,19 @@ public class Main {
         showPlayingField(markedPlaces);
         System.out.println("Player 'O' goes first and player 'X' goes second.");
 
-//        Start the game.
+// Start the game.
         while (winner.isEmpty()) {
 
-//            Scan and check input.
+// Scan and check input.
             int[] position = scanInput(scanner, size, currentPlayer);
 
-//            Insert player into field. If given position is taken scan again.
+// Insert player into field. If given position is taken scan again.
             if (!insertPlayer(markedPlaces, currentPlayer, position[0], position[1])) {
                 continue;
             }
             showPlayingField(markedPlaces);
 
-//            Check winner.
+// Check winner.
             if (checkWinner(markedPlaces)) {
                 winner = currentPlayer;
                 System.out.println("Player '" + currentPlayer + "' wins!!!");
@@ -39,7 +39,7 @@ public class Main {
                 count++;
             }
 
-//            Check draw.
+// Check draw.
             if (count == Math.pow(size, 2)) {
                 System.out.println("Draw!!!");
                 break;
@@ -78,7 +78,7 @@ public class Main {
                 int[] intPosition = new int[]{Integer.parseInt(stingPosition[0]) - 1,
                         Integer.parseInt(stingPosition[1]) - 1};
 
-//                Check if the input is within the size of the playing field
+// Check if the input is within the size of the playing field
                 if (intPosition[0] >= size || intPosition[1] >= size) {
                     throw new Exception();
                 }
@@ -105,11 +105,11 @@ public class Main {
         for (int i = 0; i < markedPlaces.length; i++) {
             for (int j = 0; j < markedPlaces[i].length; j++) {
                 if (markedPlaces[i][j] != null) {
-//                    Check horizontal direction
+// Check horizontal direction
                     if (!winner && j > 0 && j < markedPlaces[i].length - 1) {
                         winner = markedPlaces[i][j].equals(markedPlaces[i][j - 1]) &&
                                 markedPlaces[i][j].equals(markedPlaces[i][j + 1]);
-//                        Check diagonal direction
+// Check diagonal direction
                         if (!winner && i > 0 && i < markedPlaces.length - 1) {
                             winner = (markedPlaces[i][j].equals(markedPlaces[i - 1][j - 1]) &&
                                     markedPlaces[i][j].equals(markedPlaces[i + 1][j + 1])) ||
@@ -117,7 +117,7 @@ public class Main {
                                             markedPlaces[i][j].equals(markedPlaces[i + 1][j - 1]));
                         }
                     }
-//                    Check vertical direction
+// Check vertical direction
                     if (!winner && i > 0 && i < markedPlaces.length - 1) {
                         winner = markedPlaces[i][j].equals(markedPlaces[i - 1][j]) &&
                                 markedPlaces[i][j].equals(markedPlaces[i + 1][j]);
